@@ -377,72 +377,72 @@
 
         <!-- SLIDE 1 -->
         <div class="slide active" data-index="0">
-            <img src="pelita1.jpg" alt="Slide 1 — Judul" draggable="false">
+            <img src="pelita1.jpeg" alt="Slide 1 — Judul" draggable="false">
         </div>
 
         <!-- SLIDE 2 -->
         <div class="slide" data-index="1">
-            <img src="pelita2.jpg" alt="Slide 2 — Mengapa PELITA?" draggable="false">
+            <img src="pelita2.jpeg" alt="Slide 2 — Mengapa PELITA?" draggable="false">
         </div>
 
         <!-- SLIDE 3 -->
         <div class="slide" data-index="2">
-            <img src="pelita3.jpg" alt="Slide 3 — Celah Penelitian" draggable="false">
+            <img src="pelita3.jpeg" alt="Slide 3 — Celah Penelitian" draggable="false">
         </div>
 
         <!-- SLIDE 4 -->
         <div class="slide" data-index="3">
-            <img src="pelita4.jpg" alt="Slide 4 — Solusi PELITA" draggable="false">
+            <img src="pelita4.jpeg" alt="Slide 4 — Solusi PELITA" draggable="false">
         </div>
 
         <!-- SLIDE 5 -->
         <div class="slide" data-index="4">
-            <img src="pelita5.jpg" alt="Slide 5 — Tiga Keunggulan" draggable="false">
+            <img src="pelita5.jpeg" alt="Slide 5 — Tiga Keunggulan" draggable="false">
         </div>
 
         <!-- SLIDE 6 -->
         <div class="slide" data-index="5">
-            <img src="pelita6.jpg" alt="Slide 6 — Cara Main" draggable="false">
+            <img src="pelita6.jpeg" alt="Slide 6 — Cara Main" draggable="false">
         </div>
 
         <!-- SLIDE 7 -->
         <div class="slide" data-index="6">
-            <img src="pelita7.jpg" alt="Slide 7 — Metode Penelitian" draggable="false">
+            <img src="pelita7.jpeg" alt="Slide 7 — Metode Penelitian" draggable="false">
         </div>
 
         <!-- SLIDE 8 -->
         <div class="slide" data-index="7">
-            <img src="pelita8.jpg" alt="Slide 8 — Perbandingan" draggable="false">
+            <img src="pelita8.jpeg" alt="Slide 8 — Perbandingan" draggable="false">
         </div>
 
         <!-- SLIDE 9 -->
         <div class="slide" data-index="8">
-            <img src="pelita9.jpg" alt="Slide 9 — Hasil 12 Indikator" draggable="false">
+            <img src="pelita9.jpeg" alt="Slide 9 — Hasil 12 Indikator" draggable="false">
         </div>
 
         <!-- SLIDE 10 -->
         <div class="slide" data-index="9">
-            <img src="pelita10.jpg" alt="Slide 10 — Hasil Likert" draggable="false">
+            <img src="pelita10.jpeg" alt="Slide 10 — Hasil Likert" draggable="false">
         </div>
 
         <!-- SLIDE 11 -->
         <div class="slide" data-index="10">
-            <img src="pelita11.jpg" alt="Slide 11 — Mengapa PELITA Berhasil?" draggable="false">
+            <img src="pelita11.png" alt="Slide 11 — Mengapa PELITA Berhasil?" draggable="false">
         </div>
 
         <!-- SLIDE 12 -->
         <div class="slide" data-index="11">
-            <img src="pelita12.jpg" alt="Slide 12 — Kesimpulan" draggable="false">
+            <img src="pelita12.jpeg" alt="Slide 12 — Kesimpulan" draggable="false">
         </div>
 
         <!-- SLIDE 13 -->
         <div class="slide" data-index="12">
-            <img src="pelita13.jpg" alt="Slide 13 — Arah Pengembangan" draggable="false">
+            <img src="pelita13.jpeg" alt="Slide 13 — Arah Pengembangan" draggable="false">
         </div>
 
         <!-- SLIDE 14 -->
         <div class="slide" data-index="13">
-            <img src="pelita14.jpg" alt="Slide 14 — Penutup" draggable="false">
+            <img src="pelita14.jpeg" alt="Slide 14 — Penutup" draggable="false">
         </div>
 
     </div>
@@ -489,13 +489,21 @@
         const thumbnails = document.getElementById('thumbnails');
         const loading = document.getElementById('loading');
 
+        // Daftar nama file yang sesuai dengan folder
+        const imageFiles = [
+            'pelita1.jpeg', 'pelita2.jpeg', 'pelita3.jpeg', 'pelita4.jpeg',
+            'pelita5.jpeg', 'pelita6.jpeg', 'pelita7.jpeg', 'pelita8.jpeg',
+            'pelita9.jpeg', 'pelita10.jpeg', 'pelita11.png', 'pelita12.jpeg',
+            'pelita13.jpeg', 'pelita14.jpeg'
+        ];
+
         // ===== BUILD THUMBNAILS =====
         function buildThumbnails() {
-            for (let i = 1; i <= totalSlides; i++) {
+            for (let i = 0; i < totalSlides; i++) {
                 const thumb = document.createElement('div');
-                thumb.className = 'thumb' + (i === 1 ? ' active' : '');
-                thumb.onclick = () => goToSlide(i - 1);
-                thumb.innerHTML = `<img src="pelita${i}.jpg" alt="Slide ${i}" draggable="false">`;
+                thumb.className = 'thumb' + (i === 0 ? ' active' : '');
+                thumb.onclick = () => goToSlide(i);
+                thumb.innerHTML = `<img src="${imageFiles[i]}" alt="Slide ${i + 1}" draggable="false">`;
                 thumbnails.appendChild(thumb);
             }
         }
@@ -647,4 +655,4 @@
         });
     </script>
 </body>
-</html>    
+</html>
